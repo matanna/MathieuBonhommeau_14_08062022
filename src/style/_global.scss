@@ -1,0 +1,39 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+html {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: 0 2em;
+  max-width: 1400px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid $separation;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 992px;
+  width: 100%;
+  margin: 2em;
+  background: $bg-form;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: $shadow;
+}

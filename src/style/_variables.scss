@@ -1,0 +1,21 @@
+/* Colors */
+$primary: #6C840D;
+$secondary: #667302;
+$tertiary: #B6BF95;
+$bg-form: #eff2e9;
+$separation: #e0e0e0;
+$shadow-color: #bcbcb9;
+
+/* Shadow */
+$shadow: 1px 1px 5px $shadow-color;
+
+/* mixins */
+@mixin fieldStyle {
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: 2em;
+  border: none;
+  font-size: 1em;
+  box-shadow: $shadow;
+  box-sizing: border-box;
+}

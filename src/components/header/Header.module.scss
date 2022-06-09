@@ -1,0 +1,35 @@
+@import '../../style/_variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+  border-bottom: 1px solid $separation;
+
+  .logo {
+    width: 150px;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+  }
+
+  .link {
+    color: $primary;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    text-decoration: none;
+    min-width: 137px;
+
+    img {
+      width: 25px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
