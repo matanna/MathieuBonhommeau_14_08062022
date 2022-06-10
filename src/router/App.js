@@ -2,12 +2,14 @@ import Style from "./App.module.scss";
 import { Route, Routes } from "react-router";
 import { CreateEmployee, ListEmployee, Error } from "../pages";
 import { Header, Modal } from "../components";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ModalContext, ModalProvider } from "../utils/context/ModalContext";
 
 function App() {
   // Provisoire, a adapter en fonction du besoin
   const content = "Employee Created!";
-  const [displayModal, setDisplayModal] = useState(true);
+
+  const { displayModal } = useContext(ModalContext);
 
   return (
     <div>
