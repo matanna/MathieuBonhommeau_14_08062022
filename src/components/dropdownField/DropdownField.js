@@ -3,11 +3,12 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import Style from "./DropdownField.module.scss";
 import PropTypes from "prop-types";
-import { setField } from "../../utils/redux/store";
-import { useDispatch } from "react-redux";
+import { formValuesSelector, setField } from "../../utils/redux/store";
+import { useDispatch, useSelector } from "react-redux";
 
 const DropdownField = ({ label, name, options }) => {
   const dispatch = useDispatch();
+  const formValues = useSelector(formValuesSelector);
 
   const handleChange = (e) => {
     dispatch(
@@ -26,6 +27,7 @@ const DropdownField = ({ label, name, options }) => {
         options={options}
         onChange={handleChange}
         controlClassName={Style.field}
+        value={formValues[name]}
       />
     </div>
   );

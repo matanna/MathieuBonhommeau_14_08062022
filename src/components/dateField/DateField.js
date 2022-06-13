@@ -1,18 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Style from "./DateField.module.scss";
 import PropTypes from "prop-types";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { formValuesSelector, setField } from "../../utils/redux/store";
-import { useDispatch, useSelector, useStore } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const DateField = ({ label, name }) => {
   const dispatch = useDispatch();
 
-  const { employee } = useStore().getState();
+  const formValues = useSelector(formValuesSelector);
 
   const handleChange = (e) => {
-    console.log(employee.formValues[name]);
+    console.log(name);
     dispatch(
       setField({
         name: name,
@@ -24,11 +24,7 @@ const DateField = ({ label, name }) => {
   return (
     <div>
       <label htmlFor={name}>{label}</label>
-      <DatePicker
-        id={name}
-        onChange={handleChange}
-        value={employee.formValues[name]}
-      />
+      <DatePicker id={name} onChange={handleChange} value={formValues[name]} />
     </div>
   );
 };

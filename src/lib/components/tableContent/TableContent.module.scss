@@ -1,0 +1,23 @@
+.table {
+  width: 100%;
+}
+
+.thead {
+  padding: 1em 0;
+
+  th div {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+    font-weight: bold;
+  }
+}
+
+.icon {
+  border: none;
+  background: transparent;
+
+    img {
+      width: 15px;
+    }
+}

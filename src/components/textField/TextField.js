@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Style from "./TextField.module.scss";
-import { useDispatch } from "react-redux";
-import { setField } from "../../utils/redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { formValuesSelector, setField } from "../../utils/redux/store";
 
 const TextField = ({ name, label, type }) => {
   const dispatch = useDispatch();
+  const formValues = useSelector(formValuesSelector);
 
   const handleChange = (e) => {
     dispatch(
@@ -26,9 +27,16 @@ const TextField = ({ name, label, type }) => {
           type={type}
           min="0"
           onChange={handleChange}
+          value={formValues[name]}
         />
       ) : (
-        <input name={name} id={name} type={type} onChange={handleChange} />
+        <input
+          name={name}
+          id={name}
+          type={type}
+          onChange={handleChange}
+          value={formValues[name]}
+        />
       )}
     </div>
   );
