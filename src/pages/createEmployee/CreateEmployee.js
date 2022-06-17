@@ -10,7 +10,7 @@ import {
   emptyForm,
   formValuesSelector,
   initialState,
-} from "../../utils/redux/store";
+} from "../../utils/store/store";
 
 const CreateEmployee = (props) => {
   const { displayModal, setDisplayModal } = useContext(ModalContext);
@@ -23,14 +23,13 @@ const CreateEmployee = (props) => {
     // @todo Pensez a faire la validation du formulaire
     dispatch(
       addEmployee({
-        /*id: new Date.now(),*/
         firstName: formValues.firstName,
         lastName: formValues.lastName,
         dateOfBirth: formValues.dateOfBirth,
         startDate: formValues.startDate,
         street: formValues.street,
         city: formValues.city,
-        state: formValues.state,
+        state: states.find((e) => e.name === formValues.state).abbreviation,
         zipCode: formValues.zipCode,
         department: formValues.department,
       })

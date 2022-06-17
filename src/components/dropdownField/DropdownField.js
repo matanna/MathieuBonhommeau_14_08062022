@@ -3,7 +3,7 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import Style from "./DropdownField.module.scss";
 import PropTypes from "prop-types";
-import { formValuesSelector, setField } from "../../utils/redux/store";
+import { formValuesSelector, setField } from "../../utils/store/store";
 import { useDispatch, useSelector } from "react-redux";
 
 const DropdownField = ({ label, name, options }) => {

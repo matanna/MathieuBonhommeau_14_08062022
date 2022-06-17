@@ -29,11 +29,15 @@ main {
 }
 
 .container {
-  max-width: 992px;
+  max-width: 1200px;
   width: 100%;
   margin: 2em;
   background: $bg-form;
   padding: 2em;
   border-radius: 5px;
   box-shadow: $shadow;
+
+  @media screen and (max-width: 1200px) {
+    //padding: 1em 0 ;
+  }
 }

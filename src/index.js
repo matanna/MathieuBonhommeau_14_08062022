@@ -5,7 +5,7 @@ import App from "./router/App";
 import { BrowserRouter } from "react-router-dom";
 import { ModalProvider } from "./utils/context/ModalContext";
 import { Provider } from "react-redux";
-import { store } from "./utils/redux/store";
+import { store } from "./utils/store/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

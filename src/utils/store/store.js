@@ -1,4 +1,12 @@
-import { configureStore, createAction, createReducer } from "@reduxjs/toolkit";
+import {
+  combineReducers,
+  configureStore,
+  createAction,
+  createReducer,
+} from "@reduxjs/toolkit";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
+import thunk from "redux-thunk";
 
 const initialState = {
   employees: [],
@@ -35,8 +43,25 @@ export const employeesReducer = createReducer(initialState, (builder) => {
 export const formValuesSelector = (state) => state.employee.formValues;
 export const employeesSelector = (state) => state.employee.employees;
 
+export const reducer = combineReducers({
+  employee: employeesReducer,
+});
+
+const persistConfig = {
+  key: "employee",
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, reducer);
+
 export const store = configureStore({
-  reducer: {
-    employee: employeesReducer,
-  },
+  reducer: persistedReducer,
+  devTools: process.env.NODE_ENV !== "production",
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        // Ignore these action types
+        ignoredActions: ["persist/PERSIST"],
+      },
+    }),
 });

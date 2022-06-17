@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Style from "./TextField.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { formValuesSelector, setField } from "../../utils/redux/store";
+import { formValuesSelector, setField } from "../../utils/store/store";
 
 const TextField = ({ name, label, type }) => {
   const dispatch = useDispatch();
