@@ -1,15 +1,19 @@
 import React, { useContext } from "react";
 import Style from "./Modal.module.scss";
-import PropTypes from "prop-types";
 import { ModalContext } from "../../utils/context/ModalContext";
 
-const Modal = ({ content }) => {
+/**
+ * The Modal function is a functional component that renders a modal that displays a message to the user when an employee
+ * is created
+ * @returns A modal that displays "Employee Created!"
+ */
+const Modal = () => {
   const { displayModal, setDisplayModal } = useContext(ModalContext);
 
   return (
     <div className={Style.container}>
       <div className={Style.modal}>
-        <p>{content}</p>
+        <p>"Employee Created!"</p>
         <div className={Style.close}>
           <span onClick={() => setDisplayModal(!displayModal)}>X</span>
         </div>
@@ -17,7 +21,5 @@ const Modal = ({ content }) => {
     </div>
   );
 };
-
-Modal.propTypes = {};
 
 export default Modal;

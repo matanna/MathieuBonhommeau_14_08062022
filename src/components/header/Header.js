@@ -1,12 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Style from "./Header.module.scss";
 import logo from "../../assets/logo.png";
 import rightArrow from "../../assets/right-arrow.png";
 import leftArrow from "../../assets/left-arrow.png";
 import { NavLink, useLocation } from "react-router-dom";
 
-const Header = (props) => {
+/**
+ * It returns a header with a logo, a title, and a link that changes depending on the current path
+ * @returns A header component that is being rendered on the page.
+ */
+const Header = () => {
+  //Get the current pathname for adapt navigation
   const pathname = useLocation().pathname;
 
   return (
@@ -31,7 +35,5 @@ const Header = (props) => {
     </header>
   );
 };
-
-Header.propTypes = {};
 
 export default Header;

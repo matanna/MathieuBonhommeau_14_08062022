@@ -1,12 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
-import Style from "./ListEmployee.module.scss";
 import { employeesSelector } from "../../utils/store/store";
 import { useSelector } from "react-redux";
 import { Table } from "react-table-mb-oc";
 
-const ListEmployee = (props) => {
+const ListEmployee = () => {
   const employees = useSelector(employeesSelector);
+
+  // Define columns and style for the table (See the library "react-table-mb-oc" description
   const columns = [
     { data: "firstName", title: "First Name", order: 1, typeData: "string" },
     { data: "lastName", title: "Last Name", order: 2, typeData: "string" },
@@ -31,7 +31,5 @@ const ListEmployee = (props) => {
     </>
   );
 };
-
-ListEmployee.propTypes = {};
 
 export default ListEmployee;

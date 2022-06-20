@@ -7,6 +7,11 @@
   padding: 1em 0;
   border-bottom: 1px solid $separation;
 
+  @media screen and (max-width: 574px) {
+    flex-direction: column;
+    gap: 1.2em;
+  }
+
   .logo {
     width: 150px;
 
@@ -23,6 +28,10 @@
     gap: 1em;
     text-decoration: none;
     min-width: 137px;
+
+    @media screen and (max-width: 574px) {
+      justify-content: center;
+    }
 
     img {
       width: 25px;

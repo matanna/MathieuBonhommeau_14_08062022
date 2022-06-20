@@ -1,3 +1,7 @@
+/**
+ * Dropdowns options
+ */
+
 export const states = [
   {
     name: "Alabama",

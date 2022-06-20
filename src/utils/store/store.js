@@ -1,3 +1,7 @@
+/**
+ * This file contains all the logic for use redux store
+ */
+
 import {
   combineReducers,
   configureStore,
@@ -6,8 +10,8 @@ import {
 } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
-import thunk from "redux-thunk";
 
+// Initial state when the application start
 const initialState = {
   employees: [],
   formValues: {
@@ -21,12 +25,16 @@ const initialState = {
     zipCode: 0,
     department: "",
   },
+  formErrors: [],
 };
 
+// Actions creators
 export const addEmployee = createAction("add/employee");
 export const setField = createAction("set/field");
 export const emptyForm = createAction("empty/form");
+export const validateDatas = createAction("validate/datas");
 
+// Reducer
 export const employeesReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(addEmployee, (state, action) => {
@@ -37,23 +45,33 @@ export const employeesReducer = createReducer(initialState, (builder) => {
     })
     .addCase(emptyForm, (state) => {
       state.formValues = initialState.formValues;
+      state.formErrors = [];
+    })
+    .addCase(validateDatas, (state, action) => {
+      state.formErrors = action.payload;
     });
 });
 
+// Selectors
 export const formValuesSelector = (state) => state.employee.formValues;
 export const employeesSelector = (state) => state.employee.employees;
+export const errorsSelector = (state) => state.employee.formErrors;
 
+// Final reducer
 export const reducer = combineReducers({
   employee: employeesReducer,
 });
 
+// Config for redux-persist
 const persistConfig = {
   key: "employee",
   storage,
 };
 
+// Adapt reducer for redux-persist
 const persistedReducer = persistReducer(persistConfig, reducer);
 
+// Store with final reducer and config for adapt it in terms of environment
 export const store = configureStore({
   reducer: persistedReducer,
   devTools: process.env.NODE_ENV !== "production",

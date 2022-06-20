@@ -3,12 +3,21 @@ import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import Style from "./DropdownField.module.scss";
 import PropTypes from "prop-types";
-import { formValuesSelector, setField } from "../../utils/store/store";
+import {
+  errorsSelector,
+  formValuesSelector,
+  setField,
+} from "../../utils/store/store";
 import { useDispatch, useSelector } from "react-redux";
 
+/**
+ * It renders a label, a dropdown, and an error message for a dropdown field
+ * @returns A dropdown field with a label, name, and options.
+ */
 const DropdownField = ({ label, name, options }) => {
   const dispatch = useDispatch();
   const formValues = useSelector(formValuesSelector);
+  const errors = useSelector(errorsSelector);
 
   const handleChange = (e) => {
     dispatch(
@@ -29,10 +38,15 @@ const DropdownField = ({ label, name, options }) => {
         controlClassName={Style.field}
         value={formValues[name]}
       />
+      {errors[name] && <p className="text-danger">{errors[name]}</p>}
     </div>
   );
 };
 
-DropdownField.propTypes = {};
+DropdownField.propTypes = {
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
+};
 
 export default DropdownField;

@@ -1,12 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Style from "./TextField.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { formValuesSelector, setField } from "../../utils/store/store";
+import {
+  errorsSelector,
+  formValuesSelector,
+  setField,
+} from "../../utils/store/store";
 
+/**
+ * It renders a label, an input, and an error message for a text field or a numeric field
+ * @returns A functional component that returns a div with a label, input, and error message.
+ */
 const TextField = ({ name, label, type }) => {
   const dispatch = useDispatch();
   const formValues = useSelector(formValuesSelector);
+  const errors = useSelector(errorsSelector);
 
   const handleChange = (e) => {
     dispatch(
@@ -38,10 +46,15 @@ const TextField = ({ name, label, type }) => {
           value={formValues[name]}
         />
       )}
+      {errors[name] && <p className="text-danger">{errors[name]}</p>}
     </div>
   );
 };
 
-TextField.propTypes = {};
+TextField.propTypes = {
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+};
 
 export default TextField;

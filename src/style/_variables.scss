@@ -13,7 +13,7 @@ $shadow: 1px 1px 5px $shadow-color;
 @mixin fieldStyle {
   width: 100%;
   padding: 0.5em 1em;
-  border-radius: 2em;
+  border-radius: 5px;
   border: none;
   font-size: 1em;
   box-shadow: $shadow;

@@ -1,6 +1,5 @@
-import PropTypes from "prop-types";
 import Style from "./CreateEmployee.module.scss";
-import { DateField, TextField, DropdownField, Modal } from "../../components";
+import { DateField, TextField, DropdownField } from "../../components";
 import { states, sales } from "../../utils/dropdownOptions";
 import { ModalContext } from "../../utils/context/ModalContext";
 import { useContext } from "react";
@@ -9,32 +8,46 @@ import {
   addEmployee,
   emptyForm,
   formValuesSelector,
-  initialState,
+  validateDatas,
 } from "../../utils/store/store";
+import { validate } from "../../utils/validation/validate";
 
-const CreateEmployee = (props) => {
+/**
+ * It's a form that allows you to create an employee
+ * @returns A form with a submit button.
+ */
+const CreateEmployee = () => {
   const { displayModal, setDisplayModal } = useContext(ModalContext);
   const dispatch = useDispatch();
   const formValues = useSelector(formValuesSelector);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setDisplayModal(!displayModal);
-    // @todo Pensez a faire la validation du formulaire
-    dispatch(
-      addEmployee({
-        firstName: formValues.firstName,
-        lastName: formValues.lastName,
-        dateOfBirth: formValues.dateOfBirth,
-        startDate: formValues.startDate,
-        street: formValues.street,
-        city: formValues.city,
-        state: states.find((e) => e.name === formValues.state).abbreviation,
-        zipCode: formValues.zipCode,
-        department: formValues.department,
-      })
-    );
-    dispatch(emptyForm());
+
+    // First, build a datas object with the form values
+    const datas = {
+      firstName: formValues.firstName,
+      lastName: formValues.lastName,
+      dateOfBirth: formValues.dateOfBirth,
+      startDate: formValues.startDate,
+      street: formValues.street,
+      city: formValues.city,
+      state: states.find((e) => e.name === formValues.state)?.abbreviation,
+      zipCode: formValues.zipCode,
+      department: formValues.department,
+    };
+
+    // Then, validate the form datas
+    const errors = validate(datas);
+
+    // Finally, If erros exists, we save errors in redux for display its on the form, else, we save the new employee
+    if (Object.keys(errors).length > 0) {
+      dispatch(validateDatas(errors));
+    } else {
+      setDisplayModal(!displayModal);
+      dispatch(addEmployee(datas));
+      dispatch(emptyForm());
+    }
   };
 
   return (
@@ -68,7 +81,5 @@ const CreateEmployee = (props) => {
     </>
   );
 };
-
-CreateEmployee.propTypes = {};
 
 export default CreateEmployee;

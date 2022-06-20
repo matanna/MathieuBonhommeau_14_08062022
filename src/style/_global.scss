@@ -26,6 +26,7 @@ h2 {
 main {
   display: flex;
   justify-content: center;
+  box-sizing: content-box;
 }
 
 .container {
@@ -37,7 +38,17 @@ main {
   border-radius: 5px;
   box-shadow: $shadow;
 
-  @media screen and (max-width: 1200px) {
-    //padding: 1em 0 ;
+  @media screen and (max-width: 768px) {
+    margin: 2em 0;
   }
+}
+
+.list-container {
+  padding: 0 3em;
+}
+
+.text-danger {
+  color: #ff0000;
+  font-size: 0.7em;
+  padding: 1em 0;
 }
