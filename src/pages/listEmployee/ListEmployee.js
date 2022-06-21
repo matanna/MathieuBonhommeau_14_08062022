@@ -1,10 +1,11 @@
-import React from "react";
-import { employeesSelector } from "../../utils/store/store";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { employeesSelector, emptyForm } from "../../utils/store/store";
+import { useDispatch, useSelector } from "react-redux";
 import { Table } from "react-table-mb-oc";
 
 const ListEmployee = () => {
   const employees = useSelector(employeesSelector);
+  const dispatch = useDispatch();
 
   // Define columns and style for the table (See the library "react-table-mb-oc" description
   const columns = [
@@ -23,6 +24,10 @@ const ListEmployee = () => {
     border: "#6C840D",
     active: "#93AD1844",
   };
+
+  useEffect(() => {
+    dispatch(emptyForm());
+  }, []);
 
   return (
     <>

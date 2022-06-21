@@ -32,15 +32,11 @@ const DateField = ({ label, name }) => {
   return (
     <div>
       <label htmlFor={name}>{label}</label>
-      {/*<input
-        className={Style.input}
-        type="date"
-        id={name}
-        value={formValues[name]}
-        onChange={handleChange}
-      />*/}
       <DatePicker
-        //className={Style.input}
+        peekNextMonth
+        showMonthDropdown
+        showYearDropdown
+        dropdownMode="select"
         type="date"
         id={name}
         value={formValues[name]}
