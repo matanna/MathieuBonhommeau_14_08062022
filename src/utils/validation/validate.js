@@ -18,7 +18,7 @@ export const validate = (datas) => {
         }
         break;
       case "lastName":
-        if (datas.firstName.length < 2) {
+        if (datas.lastName.length < 2) {
           errors.lastName = "This field must contains at least 3 characters";
         }
         break;
@@ -50,17 +50,16 @@ export const validate = (datas) => {
         }
         break;
       case "zipCode":
-        if (datas.zipCode === "") {
-          errors.zipCode = "This field cannot be empty";
-        } else if (!new RegExp(/^\d+$/).test(datas.zipCode)) {
+        if (!new RegExp(/^\d+$/).test(datas.zipCode)) {
           errors.zipCode = "This field must contains only numeric values";
+        } else if (parseInt(datas.zipCode) <= 0) {
+          errors.zipCode = "This field must be bigger than 0";
         }
         break;
       case "department":
         if (datas.department === "") {
           errors.department = "You must choose a department";
-        }
-        if (!sales.includes(datas.department)) {
+        } else if (!sales.includes(datas.department)) {
           errors.department = "This department doesn't exist";
         }
         break;
