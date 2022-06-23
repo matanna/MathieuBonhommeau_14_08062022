@@ -30,7 +30,7 @@ const DateField = ({ label, name }) => {
   };
 
   return (
-    <div>
+    <div data-testid={name}>
       <label htmlFor={name}>{label}</label>
       <DatePicker
         peekNextMonth

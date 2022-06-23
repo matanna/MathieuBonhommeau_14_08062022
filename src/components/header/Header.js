@@ -12,7 +12,6 @@ import { NavLink, useLocation } from "react-router-dom";
 const Header = () => {
   //Get the current pathname for adapt navigation
   const pathname = useLocation().pathname;
-
   return (
     <header className={Style.header}>
       <div className={Style.logo}>

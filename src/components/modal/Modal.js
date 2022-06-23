@@ -15,7 +15,12 @@ const Modal = () => {
       <div className={Style.modal}>
         <p>"Employee Created!"</p>
         <div className={Style.close}>
-          <span onClick={() => setDisplayModal(!displayModal)}>X</span>
+          <span
+            data-testid="close"
+            onClick={() => setDisplayModal(!displayModal)}
+          >
+            X
+          </span>
         </div>
       </div>
     </div>

@@ -32,7 +32,8 @@ const DropdownField = ({ label, name, options }) => {
     <div>
       <label htmlFor={name}>{label}</label>
       <Dropdown
-        id={name}
+        data-testid={name}
+        placeholder={`Select a ${name}`}
         options={options}
         onChange={handleChange}
         controlClassName={Style.field}

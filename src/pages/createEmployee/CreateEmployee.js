@@ -1,5 +1,5 @@
 import Style from "./CreateEmployee.module.scss";
-import { DateField, TextField, DropdownField } from "../../components";
+import { DateField, TextField, DropdownField, Modal } from "../../components";
 import { states, sales } from "../../utils/dropdownOptions";
 import { ModalContext } from "../../utils/context/ModalContext";
 import { useContext } from "react";
@@ -78,6 +78,7 @@ const CreateEmployee = () => {
           </div>
         </div>
       </form>
+      {displayModal && <Modal />}
     </>
   );
 };

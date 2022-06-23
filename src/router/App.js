@@ -16,7 +16,6 @@ let persistor = persistStore(store);
  * @returns The return statement is returning a JSX element.
  */
 function App() {
-  const { displayModal } = useContext(ModalContext);
   const location = useLocation().pathname;
 
   return (
@@ -33,7 +32,6 @@ function App() {
             </Routes>
           </div>
         </main>
-        {displayModal && <Modal />}
       </div>
     </PersistGate>
   );
