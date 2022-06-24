@@ -1,8 +1,9 @@
 import { render, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { store, validateDatas } from "../../utils/store/store";
+import { validateDatas } from "../../utils/store/store";
 import { DropdownField } from "../index";
 import { sales, states } from "../../utils/dropdownOptions";
+import { store } from "../../utils/store/persistStore";
 
 describe("dropdown fields", () => {
   it("Should display state dropdown", () => {
@@ -17,7 +18,7 @@ describe("dropdown fields", () => {
   });
 
   it("Should display department dropdown", () => {
-    const { getByText, debug } = render(
+    const { getByText } = render(
       <Provider store={store}>
         <DropdownField name="department" label="Department" options={sales} />
       </Provider>

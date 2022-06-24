@@ -1,7 +1,8 @@
 import { render, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { store, validateDatas } from "../../utils/store/store";
-import { DateField, TextField } from "../index";
+import { validateDatas } from "../../utils/store/store";
+import { TextField } from "../index";
+import { store } from "../../utils/store/persistStore";
 
 describe("text fields", () => {
   it("Should display firstName input", () => {

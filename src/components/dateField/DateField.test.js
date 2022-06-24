@@ -1,7 +1,8 @@
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { DateField } from "../index";
-import { store, validateDatas } from "../../utils/store/store";
+import { validateDatas } from "../../utils/store/store";
+import { store } from "../../utils/store/persistStore";
 
 describe("date fields", () => {
   it("Should display stratDate input", () => {

@@ -1,12 +1,6 @@
-import {
-  fireEvent,
-  getByTestId,
-  queryByText,
-  render,
-  waitFor,
-} from "@testing-library/react";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { store } from "../../utils/store/store";
+import { store } from "../../utils/store/persistStore";
 import CreateEmployee from "./CreateEmployee";
 import { ModalProvider } from "../../utils/context/ModalContext";
 import userEvent from "@testing-library/user-event";

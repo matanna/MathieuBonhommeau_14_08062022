@@ -5,7 +5,7 @@ import React from "react";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import { useLocation } from "react-router-dom";
-import { store } from "../utils/store/store";
+import { store } from "../utils/store/persistStore";
 
 // Redux store which is persist in local storage - use redux-persist library
 let persistor = persistStore(store);

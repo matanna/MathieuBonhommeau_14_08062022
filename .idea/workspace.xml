@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c86de740-9f5a-457f-af29-adf00f60fc04" name="Changes" comment="change datepicker and build the application">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/store/persistStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dateField/DateField.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dateField/DateField.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dropdownField/Dropdown.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdownField/Dropdown.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/textField/TextField.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/textField/TextField.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/createEmployee/CreateEmployee.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/createEmployee/CreateEmployee.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/listEmployee/ListEmployee.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/listEmployee/ListEmployee.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/store/store.js" afterDir="false" />
     </list>
@@ -144,7 +151,7 @@
       <workItem from="1655883485346" duration="8760000" />
       <workItem from="1655912837210" duration="3760000" />
       <workItem from="1655968630191" duration="31915000" />
-      <workItem from="1656055639858" duration="8310000" />
+      <workItem from="1656055639858" duration="18872000" />
     </task>
     <task id="LOCAL-00001" summary="prepare projects and delete unused files">
       <created>1654694536127</created>

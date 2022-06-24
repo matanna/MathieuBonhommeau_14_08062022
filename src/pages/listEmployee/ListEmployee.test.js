@@ -1,8 +1,8 @@
 import { render, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { addEmployee, store } from "../../utils/store/store";
+import { addEmployee } from "../../utils/store/store";
 import { ListEmployee } from "../index";
-import { Table } from "react-table-mb-oc";
+import { store } from "../../utils/store/persistStore";
 
 describe("add an employee", () => {
   it("Should see the new employee on the list page", async () => {
@@ -35,7 +35,7 @@ describe("add an employee", () => {
         <ListEmployee />
       </Provider>
     );
-    debug();
+    //debug();
     expect(getByText("John")).toBeInTheDocument();
     expect(getByText("Doe")).toBeInTheDocument();
     expect(getByText("05/04/1971")).toBeInTheDocument();
