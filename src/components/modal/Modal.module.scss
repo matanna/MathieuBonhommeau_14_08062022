@@ -1,0 +1,45 @@
+@import '../../style/_variables.scss';
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.7);
+
+  .modal {
+    position: relative;
+    top: 40%;
+    width: 30%;
+    left: 35%;
+    background: white;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #000;
+    padding: 1em 2em;
+    color: $primary;
+
+    .close {
+      position: absolute;
+      right: -12px;
+      top: -12px;
+      width: 30px;
+      height: 30px;
+      background: $tertiary;
+      color: white;
+      font-weight: bold;
+      border-radius: 2em;
+      cursor: pointer;
+
+      span {
+        position: relative;
+        font-size: 20px;
+        top: 5px;
+      }
+    }
+  }
+}

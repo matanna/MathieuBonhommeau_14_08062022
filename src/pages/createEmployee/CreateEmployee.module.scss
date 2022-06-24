@@ -1,0 +1,73 @@
+@import '../../style/_variables.scss';
+
+.form {
+  margin-top: 2em;
+
+  .group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+
+    @media screen and (max-width: 992px) {
+      flex-direction: column;
+    }
+
+    & > * {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+
+      @media screen and (max-width: 992px) {
+        width: 100%;
+      }
+
+      label {
+        padding-bottom: 0.7em;
+      }
+
+      input {
+        @include fieldStyle;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    legend {
+      width: auto;
+      padding: 0 1em;
+    }
+  }
+}
+
+.address {
+  border: 1px solid $separation;
+  padding: 1em;
+}
+
+.btnSubmit {
+  align-self: end;
+
+  button {
+    @include fieldStyle;
+    border-radius: 5px;
+    text-align: center;
+    background: $primary;
+    color: white;
+    transform: scale(1);
+    transition: 0.4s;
+    cursor: pointer;
+
+    @media screen and (max-width: 992px) {
+      margin-top: 2em;
+    }
+
+    &:hover {
+      background: $secondary;
+      transform: scale(1.025);
+    }
+  }
+}
