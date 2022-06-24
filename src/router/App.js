@@ -1,12 +1,11 @@
 import { Route, Routes } from "react-router";
 import { CreateEmployee, ListEmployee, Error } from "../pages";
-import { Header, Modal } from "../components";
-import React, { useContext } from "react";
-import { ModalContext } from "../utils/context/ModalContext";
+import { Header } from "../components";
+import React from "react";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
-import { store } from "../utils/store/store";
 import { useLocation } from "react-router-dom";
+import { store } from "../utils/store/store";
 
 // Redux store which is persist in local storage - use redux-persist library
 let persistor = persistStore(store);

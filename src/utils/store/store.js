@@ -9,7 +9,8 @@ import {
   createReducer,
 } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
-import { persistReducer } from "redux-persist";
+import { createTransform, persistReducer } from "redux-persist";
+import { REHYDRATE } from "redux-persist/es/constants";
 
 // Initial state when the application start
 const initialState = {
@@ -62,10 +63,27 @@ export const reducer = combineReducers({
   employee: employeesReducer,
 });
 
+// Transformer for rehydrate datas from local Storage but limit number of lines. We have always 10 entries when reload the application
+const transform = createTransform(
+  (state, key) => {
+    return {
+      ...state,
+    };
+  },
+  (state, key) => {
+    return {
+      ...state,
+      employees: state.employees?.slice(0, 9),
+    };
+  },
+  { employees: ["employeesReducer"] }
+);
+
 // Config for redux-persist
 const persistConfig = {
   key: "employee",
   storage,
+  transforms: [transform],
 };
 
 // Adapt reducer for redux-persist
@@ -79,7 +97,7 @@ export const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: {
         // Ignore these action types
-        ignoredActions: ["persist/PERSIST"],
+        ignoredActions: ["persist/PERSIST", "persist/REHYDRATE"],
       },
     }),
 });
