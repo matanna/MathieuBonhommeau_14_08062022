@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c86de740-9f5a-457f-af29-adf00f60fc04" name="Changes" comment="change datepicker and build the application">
-      <change afterPath="$PROJECT_DIR$/src/utils/store/persistStore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/store/store.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dateField/DateField.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dateField/DateField.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dropdownField/Dropdown.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dropdownField/Dropdown.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/textField/TextField.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/textField/TextField.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/createEmployee/CreateEmployee.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/createEmployee/CreateEmployee.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/listEmployee/ListEmployee.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/listEmployee/ListEmployee.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,24 +38,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/matanna/Documents/Dev/formation_oc_frontend/Projet_14/react-table-mb-oc&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;/home/matanna/Documents/Dev/formation_oc_frontend/Projet_14/hrnet_react/node_modules/react-scripts&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/home/matanna/Documents/Dev/formation_oc_frontend/Projet_13/argentbank/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/matanna/Documents/Dev/formation_oc_frontend/Projet_14/hrnet_react",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/home/matanna/Documents/Dev/formation_oc_frontend/Projet_14/hrnet_react/node_modules/react-scripts",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/home/matanna/Documents/Dev/formation_oc_frontend/Projet_13/argentbank/node_modules/prettier",
+    "settings.editor.selected.configurable": "Errors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/lib/assets" />
@@ -151,7 +144,9 @@
       <workItem from="1655883485346" duration="8760000" />
       <workItem from="1655912837210" duration="3760000" />
       <workItem from="1655968630191" duration="31915000" />
-      <workItem from="1656055639858" duration="18872000" />
+      <workItem from="1656055639858" duration="22575000" />
+      <workItem from="1656232776806" duration="1204000" />
+      <workItem from="1656316355159" duration="3897000" />
     </task>
     <task id="LOCAL-00001" summary="prepare projects and delete unused files">
       <created>1654694536127</created>

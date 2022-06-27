@@ -5,7 +5,7 @@
 import { combineReducers, createAction, createReducer } from "@reduxjs/toolkit";
 
 // Initial state when the application start
-const initialState = {
+export const initialState = {
   employees: [],
   formValues: {
     firstName: "",
